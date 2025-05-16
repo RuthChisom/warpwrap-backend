@@ -10,6 +10,11 @@ const PORT = 3000;
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('WarpWrap backend is live!');
+  });
+  
+
 app.get('/api/trending-casts', async (req, res) => {
   try {
     const response = await axios.get('https://api.neynar.com/v2/farcaster/feed/trending', {
